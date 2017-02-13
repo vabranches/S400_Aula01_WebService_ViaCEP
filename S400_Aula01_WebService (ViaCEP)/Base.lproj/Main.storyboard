@@ -1,26 +1,92 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="S400_Aula01_WebService__ViaCEP_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CEP x Endereço" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JfZ-sB-N6k">
+                                <rect key="frame" x="16" y="28" width="288" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="vyl-Io-tta"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endereço encontrado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNk-eY-dZ6">
+                                <rect key="frame" x="16" y="139" width="288" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="JA2-v8-NaJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite um CEP. Utilize apenas números...." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5hR-xs-K4A">
+                                <rect key="frame" x="16" y="63" width="288" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RXb-uA-Urs">
+                                <rect key="frame" x="16" y="168" width="288" height="73"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnE-aB-Jmp">
+                                <rect key="frame" x="135.5" y="101" width="48" height="30"/>
+                                <state key="normal" title="Buscar"/>
+                                <connections>
+                                    <action selector="buscar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wKZ-7j-Enb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="JfZ-sB-N6k" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="3Oc-fs-hye"/>
+                            <constraint firstItem="RXb-uA-Urs" firstAttribute="top" secondItem="NNk-eY-dZ6" secondAttribute="bottom" constant="8" symbolic="YES" id="5me-du-RCU"/>
+                            <constraint firstItem="JfZ-sB-N6k" firstAttribute="trailing" secondItem="5hR-xs-K4A" secondAttribute="trailing" id="9aK-VN-mXg"/>
+                            <constraint firstItem="5hR-xs-K4A" firstAttribute="leading" secondItem="NNk-eY-dZ6" secondAttribute="leading" id="GZu-h0-TT3"/>
+                            <constraint firstItem="NNk-eY-dZ6" firstAttribute="top" secondItem="jnE-aB-Jmp" secondAttribute="bottom" constant="8" symbolic="YES" id="Js1-I6-hXm"/>
+                            <constraint firstItem="JfZ-sB-N6k" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="Pe4-I9-Lhe"/>
+                            <constraint firstItem="NNk-eY-dZ6" firstAttribute="leading" secondItem="RXb-uA-Urs" secondAttribute="leading" id="WI9-SC-qnX"/>
+                            <constraint firstItem="NNk-eY-dZ6" firstAttribute="trailing" secondItem="RXb-uA-Urs" secondAttribute="trailing" id="ahF-rO-9Sd"/>
+                            <constraint firstItem="jnE-aB-Jmp" firstAttribute="top" secondItem="5hR-xs-K4A" secondAttribute="bottom" constant="8" symbolic="YES" id="bFV-5U-SZ9"/>
+                            <constraint firstItem="5hR-xs-K4A" firstAttribute="trailing" secondItem="NNk-eY-dZ6" secondAttribute="trailing" id="boU-B9-io3"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RXb-uA-Urs" secondAttribute="bottom" constant="327" id="f1I-Fo-YlR"/>
+                            <constraint firstItem="5hR-xs-K4A" firstAttribute="top" secondItem="JfZ-sB-N6k" secondAttribute="bottom" constant="8" symbolic="YES" id="fwy-mh-BAk"/>
+                            <constraint firstItem="jnE-aB-Jmp" firstAttribute="centerX" secondItem="NNk-eY-dZ6" secondAttribute="centerX" id="gh6-z8-4UD"/>
+                            <constraint firstItem="JfZ-sB-N6k" firstAttribute="leading" secondItem="5hR-xs-K4A" secondAttribute="leading" id="iPX-Ss-Wmb"/>
+                            <constraint firstItem="JfZ-sB-N6k" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pSl-cH-tyi"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textFieldCEP" destination="5hR-xs-K4A" id="nhl-s0-wzU"/>
+                        <outlet property="textViewEndereco" destination="RXb-uA-Urs" id="xqZ-uD-TpS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-90" y="130"/>
         </scene>
     </scenes>
 </document>
